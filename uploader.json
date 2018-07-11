@@ -2043,6 +2043,11 @@
             ],
             "symbolic_name": "smartpdc_settings"
         },
+	{
+            "file": "/etc/neutron/metadata_agent.ini",
+            "pattern": [],
+            "symbolic_name": "neutron_metadata_agent_ini"
+        },
         {
             "file": "/var/log/neutron/l3-agent.log",
             "pattern": [
@@ -2080,7 +2085,7 @@
             "glob": "sys/devices/system/cpu/vulnerabilities/*",
             "symbolic_name": "cpu_vulns",
             "pattern": []
-        }
+	}
     ],
     "meta_specs": {
         "analysis_target": {
