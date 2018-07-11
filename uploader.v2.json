@@ -1972,6 +1972,13 @@
                 "Duplicate iptables rule detected"
             ],
             "symbolic_name": "neutron_l3_agent_log"
+        },
+	{
+            "file": "/var/log/neutron/metadata-agent.log",
+            "pattern": [
+                "Server does not support metadata RPC, fallback to using neutron client"
+            ],
+            "symbolic_name": "neutron_metadata_agent_log"
         }
     ],
     "globs": [],
