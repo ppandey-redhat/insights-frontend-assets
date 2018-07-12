@@ -2043,17 +2043,22 @@
             ],
             "symbolic_name": "smartpdc_settings"
         },
-	{
-            "file": "/etc/neutron/metadata_agent.ini",
-            "pattern": [],
-            "symbolic_name": "neutron_metadata_agent_ini"
-        },
         {
             "file": "/var/log/neutron/l3-agent.log",
             "pattern": [
                 "Duplicate iptables rule detected"
             ],
             "symbolic_name": "neutron_l3_agent_log"
+        },
+	{
+            "file": "/etc/neutron/metadata_agent.ini",
+            "pattern": [],
+            "symbolic_name": "neutron_metadata_agent_ini"
+        },
+        {
+            "file": "/var/lib/config-data/neutron/etc/neutron/metadata_agent.ini",
+            "pattern": [],
+            "symbolic_name": "neutron_metadata_agent_ini"
         },
         {
             "file": "/var/log/neutron/metadata-agent.log",
@@ -2068,7 +2073,7 @@
                 "Unauthorized: {\"error\": {\"message\": \"The resource could not be found.\", \"code\": 404, \"title\": \"Not Found\"}}"
             ],
             "symbolic_name": "neutron_metadata_agent_log"
-        }
+	}   
     ],
     "globs": [
         {
