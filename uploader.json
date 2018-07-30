@@ -2052,16 +2052,16 @@
         },
 	{
             "file": "/etc/neutron/metadata_agent.ini",
-            "pattern": [],
+            "pattern": [
+                "["
+            ],
             "symbolic_name": "neutron_metadata_agent_ini"
         },
-<<<<<<< HEAD
         {
-=======
-	{
->>>>>>> Updated uploader.json and uploader.v2.json to remove extra spaces
             "file": "/var/lib/config-data/neutron/etc/neutron/metadata_agent.ini",
-            "pattern": [],
+            "pattern": [
+		"["    
+	    ],
             "symbolic_name": "neutron_metadata_agent_ini"
         },
         {
