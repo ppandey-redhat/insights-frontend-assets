@@ -2050,18 +2050,14 @@
             ],
             "symbolic_name": "neutron_l3_agent_log"
         },
-	{
+        {
             "file": "/etc/neutron/metadata_agent.ini",
-            "pattern": [
-                "["
-            ],
+            "pattern": [],
             "symbolic_name": "neutron_metadata_agent_ini"
         },
         {
             "file": "/var/lib/config-data/neutron/etc/neutron/metadata_agent.ini",
-            "pattern": [
-		"["    
-	    ],
+            "pattern": [],
             "symbolic_name": "neutron_metadata_agent_ini"
         },
         {
@@ -2077,7 +2073,7 @@
                 "Unauthorized: {\"error\": {\"message\": \"The resource could not be found.\", \"code\": 404, \"title\": \"Not Found\"}}"
             ],
             "symbolic_name": "neutron_metadata_agent_log"
-	}   
+        }
     ],
     "globs": [
         {
@@ -2094,7 +2090,7 @@
             "glob": "sys/devices/system/cpu/vulnerabilities/*",
             "symbolic_name": "cpu_vulns",
             "pattern": []
-	}
+        }
     ],
     "meta_specs": {
         "analysis_target": {

@@ -2050,18 +2050,14 @@
             ],
             "symbolic_name": "neutron_l3_agent_log"
         },
-	{
+        {
             "file": "/etc/neutron/metadata_agent.ini",
-            "pattern": [
-                "["
-            ],
+            "pattern": [],
             "symbolic_name": "neutron_metadata_agent_ini"
         },
         {
             "file": "/var/lib/config-data/neutron/etc/neutron/metadata_agent.ini",
-            "pattern": [
-		"["    
-	    ],
+            "pattern": [],
             "symbolic_name": "neutron_metadata_agent_ini"
         },
         {
