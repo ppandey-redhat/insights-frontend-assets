@@ -113,6 +113,7 @@
                 "blocked FC remote port time out",
                 "crashkernel reservation failed",
                 "crashkernel=auto resulted in zero bytes of reserved memory",
+                "is now offline",
                 "ixgbevf: Unknown parameter `InterruptThrottleRate'",
                 "mce: ",
                 "netconsole: network logging started",
@@ -605,6 +606,8 @@
                 "chronyd",
                 "mysqld",
                 "ntpd",
+                "openshift start master api",
+                "openshift start master controllers",
                 "phc2sys",
                 "postgres",
                 "ptp4l",
@@ -774,6 +777,11 @@
             "command": "/bin/systemctl show smart_proxy_dynflow_core",
             "pattern": [],
             "symbolic_name": "systemctl_smartpdc"
+        },
+        {
+            "command": "/bin/systool -b scsi -v",
+            "pattern": [],
+            "symbolic_name": "systool_b_scsi_v"
         },
         {
             "command": "/usr/bin/teamdctl  state dump",
@@ -1341,9 +1349,12 @@
                 "Dazed and confused, but trying to continue",
                 "Device offlined - not ready after error recovery",
                 "Error deleting EBS Disk volume aws",
+                "Error in FW/Card",
                 "Error running DeviceResume dm_task_run failed",
+                "Link down",
                 "List /apis/image.openshift.io/v1/images",
                 "Machine",
+                "Medium access timeout failure. Offlining disk!",
                 "Neighbour table overflow",
                 "Out of MCCQ wrbs",
                 "Out of memory: kill process",
@@ -1506,7 +1517,10 @@
             "file": "/var/log/nova/nova-compute.log",
             "pattern": [
                 "Live Migration failure: operation failed: Failed to connect to remote libvirt URI qemu+ssh",
+                "Resuming guest",
                 "does not match source",
+                "error: Failed to start domain",
+                "libvirt-guests.sh",
                 "unsupported configuration: Target device drive address",
                 "unsupported configuration: Unable to find security driver for model selinux"
             ],
@@ -1516,7 +1530,10 @@
             "file": "/var/log/containers/nova/nova-compute.log",
             "pattern": [
                 "Live Migration failure: operation failed: Failed to connect to remote libvirt URI qemu+ssh",
+                "Resuming guest",
                 "does not match source",
+                "error: Failed to start domain",
+                "libvirt-guests.sh",
                 "unsupported configuration: Target device drive address",
                 "unsupported configuration: Unable to find security driver for model selinux"
             ],
@@ -1605,6 +1622,13 @@
             "file": "/var/lib/pgsql/data/postgresql.conf",
             "pattern": [],
             "symbolic_name": "postgresql_conf"
+        },
+        {
+            "file": "/etc/sysconfig/puppetserver",
+            "pattern": [
+                "JAVA_ARGS"
+            ],
+            "symbolic_name": "puppetserver_config"
         },
         {
             "file": "/var/lib/pgsql/data/pg_log/()*postgresql-.+\\.log",
@@ -1893,6 +1917,11 @@
             "symbolic_name": "sysconfig_kdump"
         },
         {
+            "file": "/etc/sysconfig/libvirt-guests",
+            "pattern": [],
+            "symbolic_name": "sysconfig_libvirt_guests"
+        },
+        {
             "file": "/etc/sysconfig/()*mongod",
             "pattern": [],
             "symbolic_name": "sysconfig_mongod"
@@ -2150,6 +2179,22 @@
             "symbolic_name": "gnocchi_conf"
         },
         {
+            "file": "/etc/neutron/neutron.conf",
+            "pattern": [
+                "[",
+                "dhcp_agents_per_network"
+            ],
+            "symbolic_name": "neutron_conf"
+        },
+        {
+            "file": "/var/lib/config-data/neutron/etc/neutron/neutron.conf",
+            "pattern": [
+                "[",
+                "dhcp_agents_per_network"
+            ],
+            "symbolic_name": "neutron_conf"
+        },
+        {
             "file": "/etc/neutron/plugin.ini",
             "pattern": [],
             "symbolic_name": "neutron_plugin_ini"
@@ -2233,18 +2278,23 @@
     ],
     "globs": [
         {
-            "glob": "sys/devices/system/cpu/cpu[0-9]*/online",
+            "glob": "/sys/devices/system/cpu/cpu[0-9]*/online",
             "symbolic_name": "cpu_cores",
             "pattern": []
         },
         {
-            "glob": "sys/devices/system/cpu/cpu[0-9]*/topology/thread_siblings_list",
+            "glob": "/sys/devices/system/cpu/cpu[0-9]*/topology/thread_siblings_list",
             "symbolic_name": "cpu_siblings",
             "pattern": []
         },
         {
-            "glob": "sys/devices/system/cpu/vulnerabilities/*",
+            "glob": "/sys/devices/system/cpu/vulnerabilities/*",
             "symbolic_name": "cpu_vulns",
+            "pattern": []
+        },
+        {
+            "glob": "/var/opt/amq-broker/*/etc/broker.xml",
+            "symbolic_name": "amq_broker",
             "pattern": []
         }
     ],
@@ -7753,5 +7803,5 @@
             ]
         }
     },
-    "version": "2018-08-23T17:35:39.220892"
+    "version": "2018-08-30T14:43:24.359393"
 }
